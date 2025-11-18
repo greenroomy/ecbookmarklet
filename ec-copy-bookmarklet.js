@@ -48,6 +48,9 @@
       const found=text.match(/data-price="([0-9]+)"/);
       if(found){p=found[1];}
       const janMeta=document.querySelector('meta[itemprop=gtin13]');
+      if(!janMeta){
+        const janMeta=document.querySelector('meta[itemprop=gtin12]');
+      }
       if(janMeta&&janMeta.content){
         j=janMeta.content.padStart(13,'0');
       }
