@@ -48,8 +48,11 @@
       const found=text.match(/data-price="([0-9]+)"/);
       if(found){p=found[1];}
       const janMeta=document.querySelector('meta[itemprop=gtin13]');
+      console.log('gtin13は',janMeta.content);
       if(!janMeta){
         const janMeta=document.querySelector('meta[itemprop=gtin12]');
+        console.log('gtin13がない');
+        console.log('gtin12は',janMeta.content);
       }
       if(janMeta&&janMeta.content){
         j=janMeta.content.padStart(13,'0');
