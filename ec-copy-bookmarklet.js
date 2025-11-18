@@ -47,6 +47,7 @@
       let text=document.getElementsByTagName("body")[0].innerHTML;
       const found=text.match(/data-price="([0-9]+)"/);
       if(found){p=found[1];}
+      console.log('JANコード取得処理');
       const janMeta=document.querySelector('meta[itemprop=gtin13]');
       if(janMeta&&janMeta.content){
         j=janMeta.content.padStart(13,'0');
